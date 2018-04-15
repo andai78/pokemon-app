@@ -9,7 +9,8 @@
           <div class="card-stacked">
             <div class="card-content">
               <p>{{p.name}}</p>
-              <p><small>{{p.created}}</small></p>
+              <p><small>{{p.created | date:"dd/MM/yyyy"}}</small></p>
+              <span *ngFor="let type of p.types" class="{{type | pkmTypeColor}}">{{type}}</span>
             </div>
           </div>
         </div>
