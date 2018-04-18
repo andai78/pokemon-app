@@ -3,6 +3,7 @@ import { Pokemon } from '../pokemon';
 import { POKEMONS } from '../mock-pockemon';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { PkmTypeColorPipe } from '../pkm-type-color.pipe';
+import { PokemonService } from '../pokemon.service';
 
 
 @Component({
@@ -14,16 +15,19 @@ export class ListPokemonComponent implements OnInit {
 
   pokemons:Pokemon[] = [];
 
-  constructor(private route:Router) { }
+  constructor(private route:Router, private pokService:PokemonService) { }
 
   ngOnInit() {
-    this.pokemons = POKEMONS;
-    console.log(this.pokemons)
+      this.getPokemons();
   }
 
   selectPokemon(pokemon:Pokemon){
     let link = ['/pokemon', pokemon.id];
     this.route.navigate(link);
+  }
+
+  getPokemons(){
+    this.pokemons = this.pokService.getPokemons();
   }
 
 }

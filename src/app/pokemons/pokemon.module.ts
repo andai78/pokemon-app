@@ -6,6 +6,8 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
 import { BorderCardDirective } from './border-card.directive';
 import { PkmTypeColorPipe } from './pkm-type-color.pipe';
 
+import { PokemonService } from './pokemon.service';
+
 @NgModule({
 	imports: [
 		CommonModule
@@ -16,6 +18,6 @@ import { PkmTypeColorPipe } from './pkm-type-color.pipe';
 		BorderCardDirective,
 		PkmTypeColorPipe
 	],
-	providers: []
+	providers: [PokemonService]
 })
 export class PokemonsModule { }

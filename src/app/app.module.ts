@@ -4,11 +4,13 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PokemonsModule } from './pokemons/pokemon.module';
 
 import { AppComponent } from './app.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
